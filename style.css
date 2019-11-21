@@ -1,0 +1,96 @@
+:root {
+    font-size: 75.5%;
+    font-family: Montserrat, sans-serif;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 400;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    color: #3974b79d;
+}
+
+hr{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0,.1);
+}
+
+.container{
+    width: 96rem;
+    margin: 2rem auto;
+}
+
+.gallery-item{
+    max-width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    transition: all .3s;
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 1.5rem;
+    grid-auto-rows: minmax(150px, auto);
+}
+
+.image{
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    object-fit: cover;
+}
+
+.middle{
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.gallery-item:hover .image{
+    filter: grayscale(1);
+}
+
+.gallery-item:hover .middle{
+    opacity: 1;
+}
+
+.gallery-item:hover{
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+}
+
+.text{
+    color: white;
+    font-size: 2.5em;
+    padding: 16px 32px;
+    font-family: Oswald, sans-serif;
+}
+
+@media (max-width: 500px) {
+    .gallery-item
+    body{
+        max-width: 30%;
+        grid-column: 2;
+        font-family: oswald, sans-serif;
+        text-align: left;
+    }
+    div.container, h1 {
+        text-align: left;
+        margin-left: 2em;
+    }
+    div.text {
+        font-size: 2.5em;
+    }
+}
